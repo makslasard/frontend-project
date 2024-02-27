@@ -67,6 +67,61 @@ devtool: isDev && 'inline-source-map',
 
 Алиасы для абсолютных путей через @
 
+PublicApi - это index.ts файл в каждой папке
+
+Компоненты которые не требуют ассинхронного чанка мы будем экспортировать не по default exports,
+    а как именнованный export
+
+Создание своих собственных сниппетов (готовых кусков кода) с помощью WebStorm
+Заранее нужный кусок кода нужно скопировать
+Setting -> Live Template -> + Добавляем группу -> + Добавляем шаблон -> Define TypeScript (В каких файлах будет работать данный шаблон)
+
+const {to, className, children, ...otherProps} = props
+    Вытаскивание значений из props для большей читабельности
+    ...otherProps - позволяет вытаскивать остальные props
+
+export const AppLink: FC<AppLinkProps> = (props) => {
+    const {to, className, children, ...otherProps} = props - деструктуризация props
+
+    return (
+        <Link
+            to={to}
+            className={classNames(cls.AppLink, {}, [className])}
+            {...otherProps} - передача остальных пропсов в link
+        >
+            {children}
+        </Link>
+    );
+};
+
+flex-grow: 1 - задействует 100% оставшегося пространства не сдвигая
+    другой блок в отличии от width: 100%
+
+transition: width 0.5s; - плавная анимация sidebar
+
+Все оснавные размеры по типу шрифтов, размеров navbar, sidebar и тд
+    нужно выносить в переменные для удобства работы
+
+i18n - интернализация (добавление новых языков в проект)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
